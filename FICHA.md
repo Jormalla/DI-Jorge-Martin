@@ -10,13 +10,14 @@ Al menos 7. Como mínimo: 2 de texto · 1 número entero · 1 número decimal ·
 
 | # | Campo | Tipo de dato | Componente | Ejemplo de valor / opciones |
 |---|-------|--------------|------------|-----------------------------|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
-| 6 |  |  |  |  |
-| 7 |  |  |  |  |
+| 1 | Usuario | String | TextField | Trabajador1 |
+| 2 | Contraseña | String | PasswordField | eswC%RZMNZXoRrn96789&g |
+| 3 | Buscar Cliente | String | TextField | Jorge |
+| 4 | Nombre |  |  |  |
+| 5 | Apellidos |  |  |  |
+| 6 | DNI |  |  |  |
+| 7 | Domicilio |  |  |  |
+| 8 | Domicilio |  |  |  |
 
 Tipos de dato: `texto`, `entero`, `decimal`, `lista`, `opción`, `sí/no`.
 Componentes: `campo de texto`, `selector numérico`, `lista desplegable`, `botones de opción`, `casilla`.
