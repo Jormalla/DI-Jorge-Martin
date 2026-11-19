@@ -1,2 +1,19 @@
-# DI-Jorge-Martin
-Repositorio para el proyecto de DI
+# STEM GYM
+- **Alumno/a:** Jorge Martín Llaneli
+- **Temática:** gestión de un gimnasio, desde la perspectiva del trabajador
+- **IDE:** NetBeans
+- **Inicio de sesión:** Usuario: Trabajador1 - Contraseña: eswC%RZMNZXoRrn96789&g
+- 
+## Estado
+
+### Hito 0
+- Hecho: Diseñando bocetos en `bocetos/`.
+  
+### Hito 1
+- Pendiente.
+
+### Hito 2
+- Pendiente.
+
+### Hito 3
+- Pendiente.
