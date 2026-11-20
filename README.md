@@ -7,7 +7,7 @@
 ## Estado
 
 ### Hito 0
-- Hecho: Diseñando bocetos en `bocetos/`.
+- Hecho.
   
 ### Hito 1
 - Pendiente.
