@@ -10,14 +10,20 @@ Al menos 7. Como mínimo: 2 de texto · 1 número entero · 1 número decimal ·
 
 | # | Campo | Tipo de dato | Componente | Ejemplo de valor / opciones |
 |---|-------|--------------|------------|-----------------------------|
-| 1 | Usuario | String | TextField | Trabajador1 |
+| 1 | Trabajador | String | TextField | Trabajador1 |
 | 2 | Contraseña | String | PasswordField | eswC%RZMNZXoRrn96789&g |
 | 3 | Buscar Cliente | String | TextField | Jorge |
-| 4 | Nombre |  |  |  |
-| 5 | Apellidos |  |  |  |
-| 6 | DNI |  |  |  |
-| 7 | Domicilio |  |  |  |
-| 8 | Domicilio |  |  |  |
+| 4 | Nombre | String | TextField | Jorge |
+| 5 | Apellidos | String | TextField | Jorge |
+| 6 | DNI | String | TextField | 12345678-Z |
+| 7 | Domicilio | String | TextField | Calle alcorcón 124412 |
+| 8 | Estatura | Int | TextField | 177 |
+| 9 | Activo | Boolean | checkBox | Inactivo |
+| 10 | Pendiente | Boolean | checkBox | Pagado |
+| 11 | Plan | Lista | Lista Desplegable | diario/semanal/mensual |
+| 12 | Precio | double | TextField | 39.90 |
+| 13 | Pago | boton | choiceBox | Efectivo/Tarjeta/Cuenta |
+| 14 | IBAN | String | TextField | ES8300829956950656623405 |
 
 Tipos de dato: `texto`, `entero`, `decimal`, `lista`, `opción`, `sí/no`.
 Componentes: `campo de texto`, `selector numérico`, `lista desplegable`, `botones de opción`, `casilla`.
@@ -45,5 +51,11 @@ Las fotos de tus bocetos, en la carpeta `bocetos/` con estos nombres (`.jpg` o `
 
 ### Mensajes
 
-- Si el usuario o la contraseña están mal: «…»
-- Si falta un campo obligatorio en el formulario: «…»
+- Si el usuario o la contraseña están mal: «¡ERROR! Datos incorrectos. Revise el nombre del trabajador y la contraseña»
+- Si falta un campo obligatorio en el formulario: «¡ERROR! Parece que 1 o más campos obligatorios están incompletos»
+- Si no encuentra el cliente: «0 clientes encontrados con el nombre: dqwdqwdqqw»
+- Si crea un nuevo cliente: «Se añadió a nombreCliente a la lista de clientes»
+- Si elimina un cliente: «¿Estás seguro de querer eliminar a nombreCliente? Esta acción es irreversible»
+- Si elimina un cliente confirma: «cliente nombreCliente eliminado»
+- Si cancela la creación de un cliente: «Aun no se ha creado el cliente, ¿Quiéres cancelar esta acción?»
+- Si algun dato del formulario no es correcto: «1 o más campos tienen información incorrecta. Revisa el formulario»
