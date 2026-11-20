@@ -49,7 +49,7 @@ Las fotos de tus bocetos, en la carpeta `bocetos/` con estos nombres (`.jpg` o `
 ### Qué hace cada botón
 
 - Inicio de sesión › **Ingresar**: comprueba el trabajador y la contraseña y abre la ventana principal. **Crear**: abre un formulario para crear un trabajador.
-- Ventana principal > **Ver(imagen de un ojo)**: abre el perfil del cliente.
+- Ventana principal > **ChoiceBox**: Selecciona al cliente. **Papelera**: Elimina al cliente.
 - Formulario Cliente > **Crear**: comprueba los datos, pregunta al usuario y crea el cliente y cierra el formulario. **Cancelar**: Pregunta al usuario y cierra el formulario. **Eliminar**: pregunta al usuario, elimina al cliente y cierra el formulario de edición.
 
 
@@ -57,7 +57,7 @@ Las fotos de tus bocetos, en la carpeta `bocetos/` con estos nombres (`.jpg` o `
 
 - Si el usuario o la contraseña están mal: «¡ERROR! Datos incorrectos. Revise el nombre del trabajador y la contraseña»
 - Si falta un campo obligatorio en el formulario: «¡ERROR! Parece que 1 o más campos obligatorios están incompletos»
-- Si no encuentra el cliente: «0 clientes encontrados con el nombre: dqwdqwdqqw»
+- Si no encuentra el cliente: «0 clientes encontrados con el nombre: nombreCliente»
 - Si crea un nuevo cliente: «Se añadió a nombreCliente a la lista de clientes»
 - Si elimina un cliente: «¿Estás seguro de querer eliminar a nombreCliente? Esta acción es irreversible»
 - Si elimina un cliente confirma: «cliente nombreCliente eliminado»
