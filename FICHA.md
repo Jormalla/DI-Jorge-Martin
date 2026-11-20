@@ -41,13 +41,17 @@ Las fotos de tus bocetos, en la carpeta `bocetos/` con estos nombres (`.jpg` o `
 ### Ventana principal
 
 - **Menús y sus opciones:**
-  - Archivo: …
-  - …
-- **Columnas de la tabla:** …
+  - Cliente: Nuevo, Buscar
+  - Ingresos
+  - Ayuda
+- **Columnas de la tabla:** Nombre, Apellidos, DNI, Plan, Estado del pago, Activo, Ver
 
 ### Qué hace cada botón
 
-- …
+- Inicio de sesión › **Ingresar**: comprueba el trabajador y la contraseña y abre la ventana principal. **Crear**: abre un formulario para crear un trabajador.
+- Ventana principal > **Ver(imagen de un ojo)**: abre el perfil del cliente.
+- Formulario Cliente > **Crear**: comprueba los datos, pregunta al usuario y crea el cliente y cierra el formulario. **Cancelar**: Pregunta al usuario y cierra el formulario. **Eliminar**: pregunta al usuario, elimina al cliente y cierra el formulario de edición.
+
 
 ### Mensajes
 
