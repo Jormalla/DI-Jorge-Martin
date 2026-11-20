@@ -14,7 +14,7 @@ Al menos 7. Como mínimo: 2 de texto · 1 número entero · 1 número decimal ·
 | 2 | Contraseña | String | PasswordField | eswC%RZMNZXoRrn96789&g |
 | 3 | Buscar Cliente | String | TextField | Jorge |
 | 4 | Nombre | String | TextField | Jorge |
-| 5 | Apellidos | String | TextField | Jorge |
+| 5 | Apellidos | String | TextField | Martín |
 | 6 | DNI | String | TextField | 12345678-Z |
 | 7 | Domicilio | String | TextField | Calle alcorcón 124412 |
 | 8 | Estatura | Int | TextField | 177 |
