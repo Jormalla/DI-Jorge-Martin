@@ -10,7 +10,7 @@
 - Hecho.
   
 ### Hito 1
-- Pendiente.
+- Reto 1: Inicio sesión - Hecho
 
 ### Hito 2
 - Pendiente.
