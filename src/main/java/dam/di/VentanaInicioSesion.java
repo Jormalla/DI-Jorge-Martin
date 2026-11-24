@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import dam.di.disenios.ColorDisenio;
+import dam.di.disenios.Componentes;
 
 /**
  *
@@ -32,34 +33,9 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         getRootPane().setDefaultButton(btnIngresar);
-        ponerPlaceholder(tfTrabajador, "Usuario ...");
+        Componentes.ponerPlaceholder(tfTrabajador, "Usuario ...");
+        Componentes.ponerPlaceholder(contrasenia, "contrasenia");
         this.getContentPane().setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
-    }
-
-    public static void ponerPlaceholder(JTextField campo, String textoAyuda) {
-        campo.setText(textoAyuda);
-        campo.setForeground(Color.GRAY);
-
-        // Evento al entrar o salir del campo
-        campo.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                // Si tiene el texto de ayuda, lo borra y cambia el color a negro
-                if (campo.getText().equals(textoAyuda)) {
-                    campo.setText("");
-                    campo.setForeground(Color.BLACK);
-                }
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                // Si el usuario sale y lo dejó vacío, vuelve a poner la ayuda
-                if (campo.getText().isEmpty()) {
-                    campo.setForeground(Color.GRAY);
-                    campo.setText(textoAyuda);
-                }
-            }
-        });
     }
 
     /**
@@ -188,7 +164,7 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         String contraseniaIngresada = new String(contrasenia.getPassword());
 
         // No escribió nada - Alerta
-        if (trabajador.isEmpty() || contraseniaIngresada.isEmpty()) {
+        if (trabajador.isEmpty() || contraseniaIngresada.isEmpty() && intentos < MAX_INTENTOS) {
             JOptionPane.showMessageDialog(this, "Escribe el usuario y la contraseña.", "Faltan datos",
                     JOptionPane.WARNING_MESSAGE);
             // Contraseña y usuario correctos
@@ -196,21 +172,21 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
             new VentanaPrincipal().setVisible(true); // abre la principal
             dispose(); // La cierra
             // Datos incorrectos
-        } else {
+        } else if (intentos < MAX_INTENTOS) {
             JOptionPane.showMessageDialog(this, "El usuario o la contraseña no son correctos.",
                     "No se puede entrar", JOptionPane.ERROR_MESSAGE);
             contrasenia.setText(""); // borra la contraseña
             contrasenia.requestFocusInWindow(); // y deja el cursor en ella
             intentos++;
+        }
 
-            // Supera los intentos - Bloquea
+         // Supera los intentos - Bloquea
             if (intentos >= MAX_INTENTOS) {
                 tfTrabajador.setEnabled(false);
                 contrasenia.setEnabled(false);
-                JOptionPane.showMessageDialog(this, "Has superado el número de intentos ( " + MAX_INTENTOS + ")",
+                JOptionPane.showMessageDialog(this, "Has superado el número de intentos (" + MAX_INTENTOS + ")",
                         "No se puede entrar", JOptionPane.ERROR_MESSAGE);
             }
-        }
     }// GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCrearActionPerformed
