@@ -3,16 +3,18 @@ package dam.di.entidades;
 /**
  * Trabajador
  * Clase que representa aun trabajador del gimnasio. Con sus datos (usuario,
- * contrasenia) se ingresa en el programa
+ * contrasenia y si es jefe o no) se ingresa en el programa
  */
 public class Trabajador {
     private String usuario;
     private String contrasenia;
+    public boolean jefe;
 
     // ========== CONSTRUCTOR =============
-    public Trabajador(String usuario, String contrasenia) {
+    public Trabajador(String usuario, String contrasenia, boolean jefe) {
         this.usuario = usuario;
         this.contrasenia = contrasenia;
+        this.jefe = jefe;
     }
 
     // ========= GETTERS & SETTERS ===========
@@ -30,5 +32,13 @@ public class Trabajador {
 
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
+    }
+
+    public boolean isJefe() {
+        return jefe;
+    }
+
+    public void setJefe(boolean jefe) {
+        this.jefe = jefe;
     }
 }

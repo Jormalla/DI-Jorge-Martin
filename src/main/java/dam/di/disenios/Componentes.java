@@ -4,10 +4,7 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-
-import dam.di.disenios.ColorDisenio;
 
 /**
  * Componentes
@@ -16,8 +13,10 @@ import dam.di.disenios.ColorDisenio;
 public class Componentes {
 
     /**
-     * Metodo para crear un texto por defecto en un textField y se borra cuando se escribe sobre él
-     * @param campo campo TextField al que aplicar el diseño
+     * Metodo para crear un texto por defecto en un textField y se borra cuando se
+     * escribe sobre él
+     * 
+     * @param campo      campo TextField al que aplicar el diseño
      * @param textoAyuda texto de ayuda que aparecerá
      */
     public static void ponerPlaceholder(JTextField campo, String textoAyuda) {
@@ -47,7 +46,9 @@ public class Componentes {
     }
 
     /**
-     * Metodo para crear un texto por defecto en un PasswordField y se borra cuando se escribe sobre él
+     * Metodo para crear un texto por defecto en un PasswordField y se borra cuando
+     * se escribe sobre él
+     * 
      * @param campo
      * @param textoAyuda
      */
