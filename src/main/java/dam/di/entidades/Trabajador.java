@@ -12,7 +12,7 @@ public class Trabajador implements Serializable {
     private static final long serialVersionUID = 1L; // Esto es por si hago cambios en la clase que no pete .dat
     private String usuario;
     private String contrasenia;
-    public boolean jefe;
+    private boolean jefe;
 
     // ========== CONSTRUCTOR =============
     public Trabajador(String usuario, String contrasenia, boolean jefe) {
