@@ -38,8 +38,14 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                 Componentes.ponerPlaceholder(contrasenia, Config.PLACEHOLDER_CONTRASENIA);
                 this.getContentPane().setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
 
-                // PANEL NORTE
-                
+                // PANELES
+                panelNorte.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+                panelCentro.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+                panelSur.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+                panelTrabajador.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+                panelContrasenia.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+                panelSalir.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+                panelZonaEntrarCrear.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
                 // INGRESAR - DISEÑO
                 btnIngresar.setBackground(java.awt.Color.decode(ColorDisenio.NEGRO));
                 btnIngresar.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
@@ -60,6 +66,7 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
+        // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -72,7 +79,6 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         panelContrasenia = new javax.swing.JPanel();
         lvContrasenia = new javax.swing.JLabel();
         contrasenia = new javax.swing.JPasswordField();
-        panelLabelObligatorio = new javax.swing.JPanel();
         lbObligatorio = new javax.swing.JLabel();
         panelSur = new javax.swing.JPanel();
         panelSalir = new javax.swing.JPanel();
@@ -80,17 +86,22 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         panelZonaEntrarCrear = new javax.swing.JPanel();
         btnCrear = new javax.swing.JButton();
         btnIngresar = new javax.swing.JButton();
+        panelLabelObligatorio = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("STEM GYM - Inicio Sesión");
         setResizable(false);
 
-        panelNorte.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 1, 10, 1));
-        panelNorte.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5));
+        panelNorte.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 1, 20, 1));
+        java.awt.FlowLayout flowLayout3 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5);
+        flowLayout3.setAlignOnBaseline(true);
+        panelNorte.setLayout(flowLayout3);
 
+        tituloPrograma.setBackground(new java.awt.Color(0, 0, 0));
         tituloPrograma.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         tituloPrograma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloPrograma.setText("STEM - GYM");
+        tituloPrograma.setToolTipText("");
         panelNorte.add(tituloPrograma);
 
         getContentPane().add(panelNorte, java.awt.BorderLayout.PAGE_START);
@@ -124,14 +135,9 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
 
         panelCentro.add(panelContrasenia);
 
-        panelLabelObligatorio.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        panelLabelObligatorio.setLayout(new java.awt.BorderLayout());
-
         lbObligatorio.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         lbObligatorio.setText("* Obligatorio");
-        panelLabelObligatorio.add(lbObligatorio, java.awt.BorderLayout.CENTER);
-
-        panelCentro.add(panelLabelObligatorio);
+        panelCentro.add(lbObligatorio);
 
         getContentPane().add(panelCentro, java.awt.BorderLayout.CENTER);
         panelCentro.getAccessibleContext().setAccessibleDescription("");
@@ -167,6 +173,10 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         panelSur.add(panelZonaEntrarCrear);
 
         getContentPane().add(panelSur, java.awt.BorderLayout.PAGE_END);
+
+        panelLabelObligatorio.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        panelLabelObligatorio.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(panelLabelObligatorio, java.awt.BorderLayout.LINE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
