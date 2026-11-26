@@ -42,6 +42,12 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
         // CREAR - DISEÑO
         btnCrear.setBackground(java.awt.Color.decode(ColorDisenio.NEGRO));
         btnCrear.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
+        // PANELES - DISEÑO
+        zonaBotones.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+        zonaCancelarSalir.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+        zonaCrear.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+        zonaDatos.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+        zonaTitulo.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
     }
 
     /**
@@ -52,141 +58,103 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        zonaDatos = new javax.swing.JPanel();
         lbTrabajador = new javax.swing.JLabel();
         tfTrabajador = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lbContrasenia = new javax.swing.JLabel();
         pwfContrasenia1 = new javax.swing.JPasswordField();
-        pwfContrasenia2 = new javax.swing.JPasswordField();
         lbContrasenia2 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        btnCrear = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        pwfContrasenia2 = new javax.swing.JPasswordField();
         lbObligatorio = new javax.swing.JLabel();
+        zonaBotones = new javax.swing.JPanel();
+        zonaCancelarSalir = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        zonaCrear = new javax.swing.JPanel();
+        btnCrear = new javax.swing.JButton();
+        zonaTitulo = new javax.swing.JPanel();
+        titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nuevo usuario");
         setResizable(false);
 
-        lbTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        zonaDatos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 70, 1, 70));
+        zonaDatos.setLayout(new java.awt.GridLayout(4, 2, 0, 20));
+
+        lbTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbTrabajador.setText("Trabajador*:");
+        zonaDatos.add(lbTrabajador);
 
-        tfTrabajador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tfTrabajador.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfTrabajador.addActionListener(this::tfTrabajadorActionPerformed);
+        zonaDatos.add(tfTrabajador);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Contraseña*:");
+        lbContrasenia.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbContrasenia.setText("Contraseña*:");
+        zonaDatos.add(lbContrasenia);
 
-        pwfContrasenia1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        pwfContrasenia1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         pwfContrasenia1.setText("");
+        zonaDatos.add(pwfContrasenia1);
 
-        pwfContrasenia2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbContrasenia2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbContrasenia2.setText("Repetir:*");
+        zonaDatos.add(lbContrasenia2);
+
+        pwfContrasenia2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         pwfContrasenia2.setText("");
         pwfContrasenia2.addActionListener(this::pwfContrasenia2ActionPerformed);
-
-        lbContrasenia2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbContrasenia2.setText("Repetir:*");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText(" CREACIÓN DE USUARIO");
-
-        btnCrear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCrear.setText("Crear");
-        btnCrear.addActionListener(this::btnCrearActionPerformed);
-
-        btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(this::btnCancelarActionPerformed);
+        zonaDatos.add(pwfContrasenia2);
 
         lbObligatorio.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         lbObligatorio.setText("* obligatorio");
+        zonaDatos.add(lbObligatorio);
+
+        getContentPane().add(zonaDatos, java.awt.BorderLayout.CENTER);
+
+        zonaBotones.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 30, 1));
+        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5);
+        flowLayout1.setAlignOnBaseline(true);
+        zonaBotones.setLayout(flowLayout1);
+
+        zonaCancelarSalir.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 50));
 
         btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(this::btnSalirActionPerformed);
+        zonaCancelarSalir.add(btnSalir);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btnCancelar)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(btnCrear))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel1)
-                                                        .addGroup(layout
-                                                                .createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(lbTrabajador,
-                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                .addGroup(layout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(lbObligatorio)
-                                                                        .addComponent(lbContrasenia2))))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                false)
-                                                        .addComponent(pwfContrasenia1)
-                                                        .addComponent(tfTrabajador)
-                                                        .addComponent(pwfContrasenia2,
-                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 195,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addContainerGap(93, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSalir)
-                                .addGap(56, 56, 56)));
+        btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(this::btnCancelarActionPerformed);
+        zonaCancelarSalir.add(btnCancelar);
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] { btnCancelar, btnCrear });
+        zonaBotones.add(zonaCancelarSalir);
 
-        layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(btnSalir)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2)
-                                .addGap(44, 44, 44)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(lbTrabajador)
-                                        .addComponent(tfTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(pwfContrasenia1, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(pwfContrasenia2, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lbContrasenia2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lbObligatorio)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16,
-                                        Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnCrear)
-                                        .addComponent(btnCancelar))
-                                .addGap(59, 59, 59)));
+        zonaCrear.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 30, 1, 1));
+        zonaCrear.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] { btnCancelar, btnCrear });
+        btnCrear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCrear.setText("Crear");
+        btnCrear.addActionListener(this::btnCrearActionPerformed);
+        zonaCrear.add(btnCrear);
+
+        zonaBotones.add(zonaCrear);
+
+        getContentPane().add(zonaBotones, java.awt.BorderLayout.PAGE_END);
+
+        zonaTitulo.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 50));
+
+        titulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        titulo.setText(" CREACIÓN DE USUARIO");
+        zonaTitulo.add(titulo);
+
+        getContentPane().add(zonaTitulo, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -296,13 +264,18 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lbContrasenia;
     private javax.swing.JLabel lbContrasenia2;
     private javax.swing.JLabel lbObligatorio;
     private javax.swing.JLabel lbTrabajador;
     private javax.swing.JPasswordField pwfContrasenia1;
     private javax.swing.JPasswordField pwfContrasenia2;
     private javax.swing.JTextField tfTrabajador;
+    private javax.swing.JLabel titulo;
+    private javax.swing.JPanel zonaBotones;
+    private javax.swing.JPanel zonaCancelarSalir;
+    private javax.swing.JPanel zonaCrear;
+    private javax.swing.JPanel zonaDatos;
+    private javax.swing.JPanel zonaTitulo;
     // End of variables declaration//GEN-END:variables
 }

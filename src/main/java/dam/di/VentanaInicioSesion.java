@@ -111,11 +111,11 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
 
         panelTrabajador.setLayout(new java.awt.GridLayout(2, 0));
 
-        lbTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbTrabajador.setText("Trabajador*");
         panelTrabajador.add(lbTrabajador);
 
-        tfTrabajador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tfTrabajador.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfTrabajador.setText("Usuario ...");
         tfTrabajador.addActionListener(this::tfTrabajadorActionPerformed);
         panelTrabajador.add(tfTrabajador);
@@ -124,11 +124,11 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
 
         panelContrasenia.setLayout(new java.awt.GridLayout(2, 0));
 
-        lvContrasenia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lvContrasenia.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lvContrasenia.setText("Contraseña*");
         panelContrasenia.add(lvContrasenia);
 
-        contrasenia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        contrasenia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         contrasenia.setText("jPasswordField1");
         contrasenia.addActionListener(this::contraseniaActionPerformed);
         panelContrasenia.add(contrasenia);
