@@ -188,9 +188,8 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                         String contraseniaIngresada = new String(contrasenia.getPassword());
 
                         // NO ESCRIBIO NADA - ALERTA
-                        if (usuario.isEmpty()
-                                        || contraseniaIngresada.isEmpty()
-                                                        && intentos < Config.MAX_INTENTOS_CONTRASENIA) {
+                        if ((usuario.isEmpty() || contraseniaIngresada.isEmpty())
+                                        && intentos < Config.MAX_INTENTOS_CONTRASENIA) {
                                 JOptionPane.showMessageDialog(this, "Escribe el usuario y la contraseña.",
                                                 "Faltan datos",
                                                 JOptionPane.WARNING_MESSAGE);
@@ -217,8 +216,9 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                                                 "No se puede entrar", JOptionPane.ERROR_MESSAGE);
                         }
                 } catch (IOException e) {
-                        JOptionPane.showMessageDialog(this, "ERROR",
-                                        "No dispones de los permisos suficientes o el archivo trabajadores.dat está corrupto",
+                        JOptionPane.showMessageDialog(this,
+                                        "Archivo trabajadores.dat corrupto o permisos de aplicación necesarios",
+                                        "ERROR",
                                         JOptionPane.ERROR_MESSAGE);
                         System.err.println(e.getMessage());
                 }

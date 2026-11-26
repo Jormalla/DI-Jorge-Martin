@@ -112,7 +112,8 @@ public class GestorTrabajadores {
      */
     public boolean credencialesCorrectas(String usuario, String contrasenia) throws IOException {
         Trabajador trabajador = buscarTrabajador(usuario);
-        if (trabajador.getUsuario().equals(usuario) && trabajador.getContrasenia().equals(contrasenia)) {
+        if (trabajador != null && trabajador.getUsuario().equals(usuario)
+                && trabajador.getContrasenia().equals(contrasenia)) {
             return true;
         }
         return false;

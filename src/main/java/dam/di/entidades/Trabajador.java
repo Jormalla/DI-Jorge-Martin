@@ -1,11 +1,15 @@
 package dam.di.entidades;
 
+import java.io.Serializable;
+
 /**
  * Trabajador
  * Clase que representa aun trabajador del gimnasio. Con sus datos (usuario,
  * contrasenia y si es jefe o no) se ingresa en el programa
  */
-public class Trabajador {
+public class Trabajador implements Serializable {
+
+    private static final long serialVersionUID = 1L; // Esto es por si hago cambios en la clase que no pete .dat
     private String usuario;
     private String contrasenia;
     public boolean jefe;
