@@ -188,8 +188,14 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }// GEN-LAST:event_btnCrearActionPerformed
 
+    // =========== CANCELAR ============
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
+        int respuesta = JOptionPane.showConfirmDialog(this, "¿Estás seguro de cancelar? no se creará el usuario",
+                "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (respuesta == JOptionPane.YES_OPTION) {
+            new VentanaInicioSesion().setVisible(true);
+            dispose();
+        }
     }// GEN-LAST:event_btnCancelarActionPerformed
 
     // ============= SALIR =============

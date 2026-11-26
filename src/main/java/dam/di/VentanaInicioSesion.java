@@ -216,7 +216,7 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
 
         // ============== CREAR ================
         private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCrearActionPerformed
-                new VentanaCrearUsuario().setVisible(true); // abre la principal
+                new VentanaCrearUsuario().setVisible(true);
                 dispose();
         }// GEN-LAST:event_btnCrearActionPerformed
 
