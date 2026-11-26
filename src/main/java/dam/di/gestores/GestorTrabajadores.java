@@ -84,4 +84,37 @@ public class GestorTrabajadores {
             salida.writeObject(lista);
         }
     }
+
+    /**
+     * MÉTODO para buscar un trabajador por nombre de usuario
+     * 
+     * @return devuelve el trabajador o en su defecto null
+     * @throws IOException En caso de que no se tengan permisos o el archivo esté
+     *                     corrupto
+     */
+    public Trabajador buscarTrabajador(String nombreUsuario) throws IOException {
+        List<Trabajador> trabajadores = cargarTrabajadores();
+        // Recorre todos los trabajadores y si lo encuentra lo devuelve
+        for (Trabajador trabajador : trabajadores) {
+            if (trabajador.getUsuario().equals(nombreUsuario)) {
+                return trabajador;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * MÉTODO que permite comprobar si las credenciales introducidas son correctas
+     * 
+     * @return devuelve true si usuario y contraseña son correctos, de lo contrario
+     *         true
+     * @throws IOException salta excepcion por error de permisos o archivo corrupto
+     */
+    public boolean credencialesCorrectas(String usuario, String contrasenia) throws IOException {
+        Trabajador trabajador = buscarTrabajador(usuario);
+        if (trabajador.getUsuario().equals(usuario) && trabajador.getContrasenia().equals(contrasenia)) {
+            return true;
+        }
+        return false;
+    }
 }
