@@ -37,6 +37,9 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                 Componentes.ponerPlaceholder(tfTrabajador, "Usuario ...");
                 Componentes.ponerPlaceholder(contrasenia, Config.PLACEHOLDER_CONTRASENIA);
                 this.getContentPane().setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+
+                // PANEL NORTE
+                
                 // INGRESAR - DISEÑO
                 btnIngresar.setBackground(java.awt.Color.decode(ColorDisenio.NEGRO));
                 btnIngresar.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
@@ -60,10 +63,6 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnSalir = new javax.swing.JButton();
-        btnIngresar = new javax.swing.JButton();
-        btnCrear = new javax.swing.JButton();
-        lbObligatorio = new javax.swing.JLabel();
         panelNorte = new javax.swing.JPanel();
         tituloPrograma = new javax.swing.JLabel();
         panelCentro = new javax.swing.JPanel();
@@ -73,45 +72,31 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         panelContrasenia = new javax.swing.JPanel();
         lvContrasenia = new javax.swing.JLabel();
         contrasenia = new javax.swing.JPasswordField();
+        panelLabelObligatorio = new javax.swing.JPanel();
+        lbObligatorio = new javax.swing.JLabel();
         panelSur = new javax.swing.JPanel();
-
-        btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(this::btnSalirActionPerformed);
-
-        btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnIngresar.setText("Entrar");
-        btnIngresar.addActionListener(this::btnIngresarActionPerformed);
-
-        btnCrear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCrear.setText("Crear");
-        btnCrear.addActionListener(this::btnCrearActionPerformed);
-
-        lbObligatorio.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        lbObligatorio.setText("* Obligatorio");
+        panelSalir = new javax.swing.JPanel();
+        btnSalir = new javax.swing.JButton();
+        panelZonaEntrarCrear = new javax.swing.JPanel();
+        btnCrear = new javax.swing.JButton();
+        btnIngresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("STEM GYM - Inicio Sesión");
         setResizable(false);
 
+        panelNorte.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 1, 10, 1));
+        panelNorte.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5));
+
         tituloPrograma.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         tituloPrograma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloPrograma.setText("STEM - GYM");
-
-        javax.swing.GroupLayout panelNorteLayout = new javax.swing.GroupLayout(panelNorte);
-        panelNorte.setLayout(panelNorteLayout);
-        panelNorteLayout.setHorizontalGroup(
-            panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tituloPrograma, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
-        );
-        panelNorteLayout.setVerticalGroup(
-            panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tituloPrograma, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-        );
+        panelNorte.add(tituloPrograma);
 
         getContentPane().add(panelNorte, java.awt.BorderLayout.PAGE_START);
 
-        panelCentro.setLayout(new java.awt.GridLayout(2, 1));
+        panelCentro.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 50, 1, 50));
+        panelCentro.setLayout(new java.awt.GridLayout(3, 1, 0, 10));
 
         panelTrabajador.setLayout(new java.awt.GridLayout(2, 0));
 
@@ -139,18 +124,47 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
 
         panelCentro.add(panelContrasenia);
 
-        getContentPane().add(panelCentro, java.awt.BorderLayout.CENTER);
+        panelLabelObligatorio.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        panelLabelObligatorio.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout panelSurLayout = new javax.swing.GroupLayout(panelSur);
-        panelSur.setLayout(panelSurLayout);
-        panelSurLayout.setHorizontalGroup(
-            panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
-        );
-        panelSurLayout.setVerticalGroup(
-            panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        lbObligatorio.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lbObligatorio.setText("* Obligatorio");
+        panelLabelObligatorio.add(lbObligatorio, java.awt.BorderLayout.CENTER);
+
+        panelCentro.add(panelLabelObligatorio);
+
+        getContentPane().add(panelCentro, java.awt.BorderLayout.CENTER);
+        panelCentro.getAccessibleContext().setAccessibleDescription("");
+
+        panelSur.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 30, 0));
+        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5);
+        flowLayout1.setAlignOnBaseline(true);
+        panelSur.setLayout(flowLayout1);
+
+        java.awt.FlowLayout flowLayout2 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT);
+        flowLayout2.setAlignOnBaseline(true);
+        panelSalir.setLayout(flowLayout2);
+
+        btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(this::btnSalirActionPerformed);
+        panelSalir.add(btnSalir);
+
+        panelSur.add(panelSalir);
+
+        panelZonaEntrarCrear.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        btnCrear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCrear.setText("Crear");
+        btnCrear.addActionListener(this::btnCrearActionPerformed);
+        panelZonaEntrarCrear.add(btnCrear);
+
+        btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnIngresar.setText("Entrar");
+        btnIngresar.addActionListener(this::btnIngresarActionPerformed);
+        panelZonaEntrarCrear.add(btnIngresar);
+
+        panelSur.add(panelZonaEntrarCrear);
 
         getContentPane().add(panelSur, java.awt.BorderLayout.PAGE_END);
 
@@ -261,9 +275,12 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel lvContrasenia;
     private javax.swing.JPanel panelCentro;
     private javax.swing.JPanel panelContrasenia;
+    private javax.swing.JPanel panelLabelObligatorio;
     private javax.swing.JPanel panelNorte;
+    private javax.swing.JPanel panelSalir;
     private javax.swing.JPanel panelSur;
     private javax.swing.JPanel panelTrabajador;
+    private javax.swing.JPanel panelZonaEntrarCrear;
     private javax.swing.JTextField tfTrabajador;
     private javax.swing.JLabel tituloPrograma;
     // End of variables declaration//GEN-END:variables
