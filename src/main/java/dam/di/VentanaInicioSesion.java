@@ -37,6 +37,15 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                 Componentes.ponerPlaceholder(tfTrabajador, "Usuario ...");
                 Componentes.ponerPlaceholder(contrasenia, Config.PLACEHOLDER_CONTRASENIA);
                 this.getContentPane().setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+                // INGRESAR - DISEÑO
+                btnIngresar.setBackground(java.awt.Color.decode(ColorDisenio.NEGRO));
+                btnIngresar.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
+                // CREAR - DISEÑO
+                btnCrear.setBackground(java.awt.Color.decode(ColorDisenio.NEGRO));
+                btnCrear.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
+                // SALIR - DISEÑO
+                btnSalir.setBackground(java.awt.Color.decode(ColorDisenio.ROJO));
+                btnSalir.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
         }
 
         /**
