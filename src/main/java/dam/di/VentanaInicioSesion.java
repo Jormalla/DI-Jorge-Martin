@@ -47,117 +47,150 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // Code">//GEN-BEGIN:initComponents
+        private void initComponents() {
 
-        lbTrabajador = new javax.swing.JLabel();
-        contrasenia = new javax.swing.JPasswordField();
-        tfTrabajador = new javax.swing.JTextField();
-        lvContrasenia = new javax.swing.JLabel();
-        btnIngresar = new javax.swing.JButton();
-        btnCrear = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
-        tituloPrograma = new javax.swing.JLabel();
-        lbObligatorio = new javax.swing.JLabel();
+                lbTrabajador = new javax.swing.JLabel();
+                contrasenia = new javax.swing.JPasswordField();
+                tfTrabajador = new javax.swing.JTextField();
+                lvContrasenia = new javax.swing.JLabel();
+                btnIngresar = new javax.swing.JButton();
+                btnCrear = new javax.swing.JButton();
+                btnSalir = new javax.swing.JButton();
+                tituloPrograma = new javax.swing.JLabel();
+                lbObligatorio = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("STEM GYM - Inicio Sesión");
-        setResizable(false);
+                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setTitle("STEM GYM - Inicio Sesión");
+                setResizable(false);
 
-        lbTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbTrabajador.setText("Trabajador*");
+                lbTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                lbTrabajador.setText("Trabajador*");
 
-        contrasenia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        contrasenia.setText("jPasswordField1");
-        contrasenia.addActionListener(this::contraseniaActionPerformed);
+                contrasenia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                contrasenia.setText("jPasswordField1");
+                contrasenia.addActionListener(this::contraseniaActionPerformed);
 
-        tfTrabajador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tfTrabajador.setText("Usuario ...");
-        tfTrabajador.addActionListener(this::tfTrabajadorActionPerformed);
+                tfTrabajador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                tfTrabajador.setText("Usuario ...");
+                tfTrabajador.addActionListener(this::tfTrabajadorActionPerformed);
 
-        lvContrasenia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lvContrasenia.setText("Contraseña*");
+                lvContrasenia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                lvContrasenia.setText("Contraseña*");
 
-        btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnIngresar.setText("Entrar");
-        btnIngresar.addActionListener(this::btnIngresarActionPerformed);
+                btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                btnIngresar.setText("Entrar");
+                btnIngresar.addActionListener(this::btnIngresarActionPerformed);
 
-        btnCrear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCrear.setText("Crear");
-        btnCrear.addActionListener(this::btnCrearActionPerformed);
+                btnCrear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                btnCrear.setText("Crear");
+                btnCrear.addActionListener(this::btnCrearActionPerformed);
 
-        btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(this::btnSalirActionPerformed);
+                btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                btnSalir.setText("Salir");
+                btnSalir.addActionListener(this::btnSalirActionPerformed);
 
-        tituloPrograma.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
-        tituloPrograma.setText("STEM - GYM");
+                tituloPrograma.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
+                tituloPrograma.setText("STEM - GYM");
 
-        lbObligatorio.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        lbObligatorio.setText("* Obligatorio");
+                lbObligatorio.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+                lbObligatorio.setText("* Obligatorio");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lvContrasenia)
-                            .addComponent(lbTrabajador))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                .addComponent(contrasenia)
-                                .addComponent(tfTrabajador)
-                                .addComponent(tituloPrograma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(lbObligatorio)
-                                    .addGap(0, 0, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCrear)
-                                .addGap(107, 107, 107)
-                                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(92, 92, 92))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalir)
-                .addGap(39, 39, 39))
-        );
+                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+                getContentPane().setLayout(layout);
+                layout.setHorizontalGroup(
+                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                                .addContainerGap(96, Short.MAX_VALUE)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.CENTER)
+                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                                layout.createSequentialGroup()
+                                                                                                                .addGroup(layout.createParallelGroup(
+                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                                .addComponent(lvContrasenia)
+                                                                                                                                .addComponent(lbTrabajador))
+                                                                                                                .addContainerGap(
+                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                Short.MAX_VALUE))
+                                                                                .addGroup(layout.createSequentialGroup()
+                                                                                                .addGroup(layout.createParallelGroup(
+                                                                                                                javax.swing.GroupLayout.Alignment.CENTER)
+                                                                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                                                layout.createParallelGroup(
+                                                                                                                                                javax.swing.GroupLayout.Alignment.CENTER)
+                                                                                                                                                .addComponent(contrasenia)
+                                                                                                                                                .addComponent(tfTrabajador)
+                                                                                                                                                .addComponent(tituloPrograma,
+                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                Short.MAX_VALUE)
+                                                                                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                                                                                                layout.createSequentialGroup()
+                                                                                                                                                                                .addComponent(lbObligatorio)
+                                                                                                                                                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                                                                                                .addGroup(layout.createSequentialGroup()
+                                                                                                                                .addComponent(btnCrear)
+                                                                                                                                .addGap(107, 107,
+                                                                                                                                                107)
+                                                                                                                                .addComponent(btnIngresar,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                72,
+                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                                .addGap(92, 92, 92))))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout
+                                                                .createSequentialGroup()
+                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                .addComponent(btnSalir)
+                                                                .addGap(39, 39, 39)));
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCrear, btnIngresar});
+                layout.linkSize(javax.swing.SwingConstants.HORIZONTAL,
+                                new java.awt.Component[] { btnCrear, btnIngresar });
 
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(btnSalir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(tituloPrograma)
-                .addGap(37, 37, 37)
-                .addComponent(lbTrabajador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lvContrasenia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(lbObligatorio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCrear)
-                    .addComponent(btnIngresar))
-                .addGap(40, 40, 40))
-        );
+                layout.setVerticalGroup(
+                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout
+                                                                .createSequentialGroup()
+                                                                .addGap(22, 22, 22)
+                                                                .addComponent(btnSalir)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                                34, Short.MAX_VALUE)
+                                                                .addComponent(tituloPrograma)
+                                                                .addGap(37, 37, 37)
+                                                                .addComponent(lbTrabajador)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(tfTrabajador,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                30,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(lvContrasenia)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(contrasenia,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                31,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(7, 7, 7)
+                                                                .addComponent(lbObligatorio)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                .addComponent(btnCrear)
+                                                                                .addComponent(btnIngresar))
+                                                                .addGap(40, 40, 40)));
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCrear, btnIngresar});
+                layout.linkSize(javax.swing.SwingConstants.VERTICAL,
+                                new java.awt.Component[] { btnCrear, btnIngresar });
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+                pack();
+        }// </editor-fold>//GEN-END:initComponents
 
         private void contraseniaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_contraseniaActionPerformed
                 // TODO add your handling code here:
@@ -205,10 +238,8 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                                                 "No se puede entrar", JOptionPane.ERROR_MESSAGE);
                         }
                 } catch (IOException e) {
-                        JOptionPane.showMessageDialog(this,
-                                        "Archivo trabajadores.dat corrupto o permisos de aplicación necesarios",
-                                        "ERROR",
-                                        JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, Config.MSG_ARCHIVO_CORRUPTO_O_SIN_PERMISOS_TRABAJADORES,
+                                        Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
                         System.err.println(e.getMessage());
                 }
 
@@ -255,15 +286,15 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                 java.awt.EventQueue.invokeLater(() -> new VentanaInicioSesion().setVisible(true));
         }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrear;
-    private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JPasswordField contrasenia;
-    private javax.swing.JLabel lbObligatorio;
-    private javax.swing.JLabel lbTrabajador;
-    private javax.swing.JLabel lvContrasenia;
-    private javax.swing.JTextField tfTrabajador;
-    private javax.swing.JLabel tituloPrograma;
-    // End of variables declaration//GEN-END:variables
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnCrear;
+        private javax.swing.JButton btnIngresar;
+        private javax.swing.JButton btnSalir;
+        private javax.swing.JPasswordField contrasenia;
+        private javax.swing.JLabel lbObligatorio;
+        private javax.swing.JLabel lbTrabajador;
+        private javax.swing.JLabel lvContrasenia;
+        private javax.swing.JTextField tfTrabajador;
+        private javax.swing.JLabel tituloPrograma;
+        // End of variables declaration//GEN-END:variables
 }

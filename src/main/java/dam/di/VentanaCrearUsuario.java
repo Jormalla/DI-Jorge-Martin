@@ -4,10 +4,16 @@
  */
 package dam.di;
 
+import java.io.IOException;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
+import dam.di.config.Config;
 import dam.di.disenios.ColorDisenio;
 import dam.di.disenios.Componentes;
+import dam.di.entidades.Trabajador;
+import dam.di.gestores.GestorTrabajadores;
 
 /**
  *
@@ -66,10 +72,10 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
         jLabel1.setText("Contraseña*:");
 
         pwfContrasenia1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        pwfContrasenia1.setText("jPasswordField1");
+        pwfContrasenia1.setText("");
 
         pwfContrasenia2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        pwfContrasenia2.setText("jPasswordField1");
+        pwfContrasenia2.setText("");
         pwfContrasenia2.addActionListener(this::pwfContrasenia2ActionPerformed);
 
         lbContrasenia2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -184,8 +190,49 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }// GEN-LAST:event_pwfContrasenia2ActionPerformed
 
+    // ============= CREAR ==============
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCrearActionPerformed
-        // TODO add your handling code here:
+        // OBTENCIÓN DE DATOS
+        String nombreUsuario = tfTrabajador.getText();
+        String primerCampoContrasenia = new String(pwfContrasenia1.getPassword());
+        String segundoCampoContrasenia = new String(pwfContrasenia2.getPassword());
+
+        try {
+            GestorTrabajadores gestor = new GestorTrabajadores();
+            List<Trabajador> trabajadores = gestor.cargarTrabajadores();
+            // DATOS INCOMPLETOS
+            if (nombreUsuario.isBlank() || primerCampoContrasenia.isBlank() || segundoCampoContrasenia.isBlank()
+                    || primerCampoContrasenia.equals(Config.PLACEHOLDER_CONTRASENIA)) {
+                JOptionPane.showMessageDialog(this, Config.MSG_FALTA_USUARIO_CONTRASENIA,
+                        Config.MSG_TITULO_FALTAN_DATOS,
+                        JOptionPane.WARNING_MESSAGE);
+                // NOMBRE DE USUARIO EXISTENTE
+            } else if (gestor.buscarTrabajador(nombreUsuario) != null) {
+                JOptionPane.showMessageDialog(this, Config.MSG_USUARIO_EXISTENTE,
+                        Config.MSG_TITULO_ERROR,
+                        JOptionPane.ERROR_MESSAGE);
+                // NO ESCRIBIO LA CONTRASEÑA REPETIDA IGUAL
+            } else if (!primerCampoContrasenia.equals(segundoCampoContrasenia)) {
+                JOptionPane.showMessageDialog(this, Config.MSG_CONTRASENIA_REPETIDA_DIFERENTE,
+                        Config.MSG_TITULO_ERROR,
+                        JOptionPane.ERROR_MESSAGE);
+                // CREA EL TRABAJADOR SIN ROL DE JEFE
+            } else {
+                trabajadores.add(new Trabajador(nombreUsuario, primerCampoContrasenia, false));
+                gestor.guardarTrabajadores(trabajadores);
+                JOptionPane.showMessageDialog(this, Config.MSG_EXITO_USUARIO_CREADO,
+                        Config.MSG_TITULO_EXITO,
+                        JOptionPane.INFORMATION_MESSAGE);
+                new VentanaInicioSesion().setVisible(true);
+                dispose();
+            }
+
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, Config.MSG_ARCHIVO_CORRUPTO_O_SIN_PERMISOS_TRABAJADORES,
+                    Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
+            System.err.println(e.getMessage());
+        }
+
     }// GEN-LAST:event_btnCrearActionPerformed
 
     // =========== CANCELAR ============

@@ -21,4 +21,18 @@ public class Config {
     public static final Path RUTA_BBDD_CLIENTES = Path.of("datos", "clientes.csv");
     public static final Path RUTA_LOGS_REGISTROS = Path.of("logs", "registros.log");
     public static final Path RUTA_LOGS_ERRORES = Path.of("logs", "error.log");
+
+    // ============ MENSAJES ALERTAS =========== //
+    public static final String MSG_TITULO_ERROR = "ERROR";
+    public static final String MSG_TITULO_FALTAN_DATOS = "FALTAN DATOS";
+    public static final String MSG_TITULO_CONFIRMAR = "CONFIRMAR";
+    public static final String MSG_TITULO_EXITO = "OPERACIÓN EXITOSA";
+    public static final String MSG_DATOS_INCOMPLETOS = "Datos incompletos";
+    public static final String MSG_FALTA_USUARIO_CONTRASENIA = "Escribe el usuario y la contraseña";
+    public static final String MSG_USUARIO_EXISTENTE = "Ya existe un trabajador con ese usuario";
+    public static final String MSG_CONTRASENIA_REPETIDA_DIFERENTE = "Los campos de las contraseñas no coinciden";
+    public static final String MSG_EXITO_USUARIO_CREADO = "El trabajador se creó con éxito";
+    public static final String MSG_ARCHIVO_CORRUPTO_O_SIN_PERMISOS_TRABAJADORES = "No se puedo acceder al archivo "
+            + RUTA_BBDD_TRABAJADORES
+            + "\nRevisa que la aplicación tenga los permisos necesarios y el archivo no esté corrupto";
 }
