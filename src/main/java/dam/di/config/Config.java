@@ -11,6 +11,7 @@ public class Config {
     // =========== CONTRASEÑA ========= //
     public static final int MAX_INTENTOS_CONTRASENIA = 3;
     public static final String CONTRASENIA_DEFAULT = "1234";
+    public static final String PLACEHOLDER_CONTRASENIA = "Place holder contraseña";
 
     // =========== USUARIO =========== //
     public static final String USUARIO_DEFAULT = "Admin";
