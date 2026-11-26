@@ -33,6 +33,15 @@
                           <Component id="contrasenia" alignment="2" max="32767" attributes="0"/>
                           <Component id="tfTrabajador" alignment="2" max="32767" attributes="0"/>
                           <Component id="tituloPrograma" alignment="2" max="32767" attributes="0"/>
+                          <Group type="102" alignment="2" attributes="0">
+                              <Component id="btnCrear" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="32767" attributes="0"/>
+                              <Component id="btnIngresar" linkSize="1" min="-2" pref="72" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lbObligatorio" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                   </Group>
@@ -42,17 +51,10 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lvContrasenia" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnCrear" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="32767" attributes="0"/>
-                              <Component id="btnIngresar" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="lvContrasenia" min="-2" max="-2" attributes="0"/>
                           <Component id="lbTrabajador" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -73,12 +75,14 @@
               <Component id="lvContrasenia" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="contrasenia" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="btnCrear" alignment="2" max="32767" attributes="0"/>
-                  <Component id="btnIngresar" alignment="2" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <Component id="lbObligatorio" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCrear" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnIngresar" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -113,7 +117,6 @@
     <Component class="javax.swing.JButton" name="btnIngresar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Entrar"/>
-        <Property name="actionCommand" type="java.lang.String" value="Entrar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarActionPerformed"/>
@@ -141,6 +144,14 @@
           <Font name="Verdana" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="STEM - GYM"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbObligatorio">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="8" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="* Obligatorio"/>
       </Properties>
     </Component>
   </SubComponents>
