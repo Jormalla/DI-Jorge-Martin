@@ -215,6 +215,7 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                         if (intentos >= Config.MAX_INTENTOS_CONTRASENIA) {
                                 tfTrabajador.setEnabled(false);
                                 contrasenia.setEnabled(false);
+                                btnIngresar.setEnabled(false);
                                 JOptionPane.showMessageDialog(this,
                                                 "Has superado el número de intentos (" + Config.MAX_INTENTOS_CONTRASENIA
                                                                 + ")",
