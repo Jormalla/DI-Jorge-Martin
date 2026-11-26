@@ -7,12 +7,15 @@ package dam.di;
 import java.awt.Color;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.io.IOException;
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import dam.di.config.Config;
 import dam.di.disenios.ColorDisenio;
 import dam.di.disenios.Componentes;
+import dam.di.gestores.GestorTrabajadores;
 
 /**
  *
@@ -179,35 +182,47 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         }// GEN-LAST:event_tfTrabajadorActionPerformed
 
         private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnIngresarActionPerformed
-                String trabajador = tfTrabajador.getText().trim();
-                String contraseniaIngresada = new String(contrasenia.getPassword());
+                GestorTrabajadores gestor = new GestorTrabajadores();
+                try {
+                        String usuario = tfTrabajador.getText().trim();
+                        String contraseniaIngresada = new String(contrasenia.getPassword());
 
-                // No escribió nada - Alerta
-                if (trabajador.isEmpty()
-                                || contraseniaIngresada.isEmpty() && intentos < Config.MAX_INTENTOS_CONTRASENIA) {
-                        JOptionPane.showMessageDialog(this, "Escribe el usuario y la contraseña.", "Faltan datos",
-                                        JOptionPane.WARNING_MESSAGE);
-                        // Contraseña y usuario correctos
-                } else if (trabajador.equals(USUARIO) && contraseniaIngresada.equals(CONTRASENA)) {
-                        new VentanaPrincipal().setVisible(true); // abre la principal
-                        dispose(); // La cierra
-                        // Datos incorrectos
-                } else if (intentos < Config.MAX_INTENTOS_CONTRASENIA) {
-                        JOptionPane.showMessageDialog(this, "El usuario o la contraseña no son correctos.",
-                                        "No se puede entrar", JOptionPane.ERROR_MESSAGE);
-                        contrasenia.setText(""); // borra la contraseña
-                        contrasenia.requestFocusInWindow(); // y deja el cursor en ella
-                        intentos++;
+                        // NO ESCRIBIO NADA - ALERTA
+                        if (usuario.isEmpty()
+                                        || contraseniaIngresada.isEmpty()
+                                                        && intentos < Config.MAX_INTENTOS_CONTRASENIA) {
+                                JOptionPane.showMessageDialog(this, "Escribe el usuario y la contraseña.",
+                                                "Faltan datos",
+                                                JOptionPane.WARNING_MESSAGE);
+                                // CONTRASENIA Y USUARIO CORRECTOS
+                        } else if (gestor.credencialesCorrectas(usuario, contraseniaIngresada)) {
+                                new VentanaPrincipal().setVisible(true); // abre la principal
+                                dispose(); // La cierra
+                                // DATOS INCORRECTOS
+                        } else if (intentos < Config.MAX_INTENTOS_CONTRASENIA) {
+                                JOptionPane.showMessageDialog(this, "El usuario o la contraseña no son correctos.",
+                                                "No se puede entrar", JOptionPane.ERROR_MESSAGE);
+                                contrasenia.setText(""); // borra la contraseña
+                                contrasenia.requestFocusInWindow(); // y deja el cursor en ella
+                                intentos++;
+                        }
+
+                        // SUPERA LOS INTENTOS - BLOQUEA
+                        if (intentos >= Config.MAX_INTENTOS_CONTRASENIA) {
+                                tfTrabajador.setEnabled(false);
+                                contrasenia.setEnabled(false);
+                                JOptionPane.showMessageDialog(this,
+                                                "Has superado el número de intentos (" + Config.MAX_INTENTOS_CONTRASENIA
+                                                                + ")",
+                                                "No se puede entrar", JOptionPane.ERROR_MESSAGE);
+                        }
+                } catch (IOException e) {
+                        JOptionPane.showMessageDialog(this, "ERROR",
+                                        "No dispones de los permisos suficientes o el archivo trabajadores.dat está corrupto",
+                                        JOptionPane.ERROR_MESSAGE);
+                        System.err.println(e.getMessage());
                 }
 
-                // Supera los intentos - Bloquea
-                if (intentos >= Config.MAX_INTENTOS_CONTRASENIA) {
-                        tfTrabajador.setEnabled(false);
-                        contrasenia.setEnabled(false);
-                        JOptionPane.showMessageDialog(this,
-                                        "Has superado el número de intentos (" + Config.MAX_INTENTOS_CONTRASENIA + ")",
-                                        "No se puede entrar", JOptionPane.ERROR_MESSAGE);
-                }
         }// GEN-LAST:event_btnIngresarActionPerformed
 
         private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCrearActionPerformed
