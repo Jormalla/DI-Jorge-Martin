@@ -54,23 +54,29 @@ public class BorderLayoutPrueba extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.BorderLayout(0, 40));
 
-        panelCentro.setLayout(new java.awt.GridLayout(3, 2));
+        panelCentro.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 50, 10, 50));
+        panelCentro.setLayout(new java.awt.GridLayout(3, 2, 0, 50));
 
+        nombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         nombre.setText("Nombre:");
         panelCentro.add(nombre);
         panelCentro.add(tfNombre);
 
+        telefono.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         telefono.setText("Teléfono:");
         panelCentro.add(telefono);
         panelCentro.add(tfTelefono);
 
+        correo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         correo.setText("Correo:");
         panelCentro.add(correo);
         panelCentro.add(tfCorreo);
 
         getContentPane().add(panelCentro, java.awt.BorderLayout.CENTER);
 
+        panelSur.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 50, 10, 50));
         panelSur.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         btnGuardar.setText("Guardar");
@@ -82,6 +88,9 @@ public class BorderLayoutPrueba extends javax.swing.JFrame {
 
         getContentPane().add(panelSur, java.awt.BorderLayout.PAGE_END);
 
+        panelNorte.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 1, 10, 1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setText("DATOS DE CONTACTO");
         panelNorte.add(jLabel2);
 
