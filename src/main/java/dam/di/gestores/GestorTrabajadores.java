@@ -11,6 +11,7 @@ import java.util.List;
 
 import dam.di.config.Config;
 import dam.di.entidades.Trabajador;
+import dam.di.exceptions.ArchivoCorruptoException;
 
 /**
  * 
@@ -32,8 +33,9 @@ public class GestorTrabajadores {
      * @return devuelve una lista de trabajadores
      * @throws IOException No dispone de los permisos para crear las carpetas o
      *                     archivos
+     * @throws ArchivoCorruptoException 
      */
-    public List<Trabajador> cargarTrabajadores() throws IOException {
+    public List<Trabajador> cargarTrabajadores() throws IOException, ArchivoCorruptoException {
         List<Trabajador> trabajadores = new ArrayList<>();
         Path archivo = Config.RUTA_BBDD_TRABAJADORES;
         // NO EXISTE LA RUTA DE LA BBDD - LA CREA
@@ -52,20 +54,20 @@ public class GestorTrabajadores {
                     Files.newInputStream(archivo))) {
                 Object dato = entrada.readObject();
                 if (!(dato instanceof List<?> lista)) {
-                    throw new IOException("El archivo no contiene una lista.");
+                    throw new ArchivoCorruptoException("trabajadores.dat no contiene una lista.");
                 }
                 for (Object elemento : lista) {
                     if (!(elemento instanceof Trabajador trabajador)) {
-                        throw new IOException("Se ha encontrado un dato inesperado.");
+                        throw new ArchivoCorruptoException("Se ha encontrado un dato inesperado en trabajadores.dat");
                     }
                     // Comprueba si hay al menos 1 nombre de usuario duplicado está duplicado
                     if (!nombresUsuario.add(trabajador.getUsuario())) {
-                        throw new IOException("Se ha encontrado al menos un usuario duplicado.");
+                        throw new IOException("Se ha encontrado al menos un usuario duplicado en trabajadores.dat");
                     }
                     trabajadores.add(trabajador);
                 }
             } catch (ClassNotFoundException e) {
-                throw new IOException("No se pudo recuperar: " + e.getMessage());
+                throw new ArchivoCorruptoException("No se pudo recuperar trabajadores.dat: " + e.getMessage());
             }
             return trabajadores;
         }
@@ -92,7 +94,7 @@ public class GestorTrabajadores {
      * @throws IOException En caso de que no se tengan permisos o el archivo esté
      *                     corrupto
      */
-    public Trabajador buscarTrabajador(String nombreUsuario) throws IOException {
+    public Trabajador buscarTrabajador(String nombreUsuario) throws IOException, ArchivoCorruptoException {
         List<Trabajador> trabajadores = cargarTrabajadores();
         // Recorre todos los trabajadores y si lo encuentra lo devuelve
         for (Trabajador trabajador : trabajadores) {
@@ -110,7 +112,7 @@ public class GestorTrabajadores {
      *         true
      * @throws IOException salta excepcion por error de permisos o archivo corrupto
      */
-    public boolean credencialesCorrectas(String usuario, String contrasenia) throws IOException {
+    public boolean credencialesCorrectas(String usuario, String contrasenia) throws IOException, ArchivoCorruptoException {
         Trabajador trabajador = buscarTrabajador(usuario);
         if (trabajador != null && trabajador.getUsuario().equals(usuario)
                 && trabajador.getContrasenia().equals(contrasenia)) {

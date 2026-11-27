@@ -32,7 +32,6 @@ public class Config {
     public static final String MSG_USUARIO_EXISTENTE = "Ya existe un trabajador con ese usuario";
     public static final String MSG_CONTRASENIA_REPETIDA_DIFERENTE = "Los campos de las contraseñas no coinciden";
     public static final String MSG_EXITO_USUARIO_CREADO = "El trabajador se creó con éxito";
-    public static final String MSG_ARCHIVO_CORRUPTO_O_SIN_PERMISOS_TRABAJADORES = "No se puedo acceder al archivo "
-            + RUTA_BBDD_TRABAJADORES
-            + "\nRevisa que la aplicación tenga los permisos necesarios y el archivo no esté corrupto";
+    public static final String MSG_TRABAJADORES_CORRUPTO = "Error al cargar trabajadores.dat. El archivo está corrupto o no sigue los parámetros";
+    public static final String MSG_ERROR_PERMISOS = "Hubo un error en los permisos de la aplicación. Revise y modifique los permisos";
 }

@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import dam.di.config.Config;
 import dam.di.disenios.ColorDisenio;
 import dam.di.disenios.Componentes;
+import dam.di.exceptions.ArchivoCorruptoException;
 import dam.di.gestores.GestorTrabajadores;
 
 /**
@@ -67,119 +68,120 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // Code">//GEN-BEGIN:initComponents
+        private void initComponents() {
 
-        panelNorte = new javax.swing.JPanel();
-        tituloPrograma = new javax.swing.JLabel();
-        panelCentro = new javax.swing.JPanel();
-        panelTrabajador = new javax.swing.JPanel();
-        lbTrabajador = new javax.swing.JLabel();
-        tfTrabajador = new javax.swing.JTextField();
-        panelContrasenia = new javax.swing.JPanel();
-        lvContrasenia = new javax.swing.JLabel();
-        contrasenia = new javax.swing.JPasswordField();
-        lbObligatorio = new javax.swing.JLabel();
-        panelSur = new javax.swing.JPanel();
-        panelSalir = new javax.swing.JPanel();
-        btnSalir = new javax.swing.JButton();
-        panelZonaEntrarCrear = new javax.swing.JPanel();
-        btnCrear = new javax.swing.JButton();
-        btnIngresar = new javax.swing.JButton();
-        panelLabelObligatorio = new javax.swing.JPanel();
+                panelNorte = new javax.swing.JPanel();
+                tituloPrograma = new javax.swing.JLabel();
+                panelCentro = new javax.swing.JPanel();
+                panelTrabajador = new javax.swing.JPanel();
+                lbTrabajador = new javax.swing.JLabel();
+                tfTrabajador = new javax.swing.JTextField();
+                panelContrasenia = new javax.swing.JPanel();
+                lvContrasenia = new javax.swing.JLabel();
+                contrasenia = new javax.swing.JPasswordField();
+                lbObligatorio = new javax.swing.JLabel();
+                panelSur = new javax.swing.JPanel();
+                panelSalir = new javax.swing.JPanel();
+                btnSalir = new javax.swing.JButton();
+                panelZonaEntrarCrear = new javax.swing.JPanel();
+                btnCrear = new javax.swing.JButton();
+                btnIngresar = new javax.swing.JButton();
+                panelLabelObligatorio = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("STEM GYM - Inicio Sesión");
-        setResizable(false);
+                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setTitle("STEM GYM - Inicio Sesión");
+                setResizable(false);
 
-        panelNorte.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 1, 20, 1));
-        java.awt.FlowLayout flowLayout3 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5);
-        flowLayout3.setAlignOnBaseline(true);
-        panelNorte.setLayout(flowLayout3);
+                panelNorte.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 1, 20, 1));
+                java.awt.FlowLayout flowLayout3 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5);
+                flowLayout3.setAlignOnBaseline(true);
+                panelNorte.setLayout(flowLayout3);
 
-        tituloPrograma.setBackground(new java.awt.Color(0, 0, 0));
-        tituloPrograma.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
-        tituloPrograma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloPrograma.setText("STEM - GYM");
-        tituloPrograma.setToolTipText("");
-        panelNorte.add(tituloPrograma);
+                tituloPrograma.setBackground(new java.awt.Color(0, 0, 0));
+                tituloPrograma.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
+                tituloPrograma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                tituloPrograma.setText("STEM - GYM");
+                tituloPrograma.setToolTipText("");
+                panelNorte.add(tituloPrograma);
 
-        getContentPane().add(panelNorte, java.awt.BorderLayout.PAGE_START);
+                getContentPane().add(panelNorte, java.awt.BorderLayout.PAGE_START);
 
-        panelCentro.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 50, 1, 50));
-        panelCentro.setLayout(new java.awt.GridLayout(3, 1, 0, 10));
+                panelCentro.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 50, 1, 50));
+                panelCentro.setLayout(new java.awt.GridLayout(3, 1, 0, 10));
 
-        panelTrabajador.setLayout(new java.awt.GridLayout(2, 0));
+                panelTrabajador.setLayout(new java.awt.GridLayout(2, 0));
 
-        lbTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbTrabajador.setText("Trabajador*");
-        panelTrabajador.add(lbTrabajador);
+                lbTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                lbTrabajador.setText("Trabajador*");
+                panelTrabajador.add(lbTrabajador);
 
-        tfTrabajador.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        tfTrabajador.setText("Usuario ...");
-        tfTrabajador.addActionListener(this::tfTrabajadorActionPerformed);
-        panelTrabajador.add(tfTrabajador);
+                tfTrabajador.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+                tfTrabajador.setText("Usuario ...");
+                tfTrabajador.addActionListener(this::tfTrabajadorActionPerformed);
+                panelTrabajador.add(tfTrabajador);
 
-        panelCentro.add(panelTrabajador);
+                panelCentro.add(panelTrabajador);
 
-        panelContrasenia.setLayout(new java.awt.GridLayout(2, 0));
+                panelContrasenia.setLayout(new java.awt.GridLayout(2, 0));
 
-        lvContrasenia.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lvContrasenia.setText("Contraseña*");
-        panelContrasenia.add(lvContrasenia);
+                lvContrasenia.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                lvContrasenia.setText("Contraseña*");
+                panelContrasenia.add(lvContrasenia);
 
-        contrasenia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        contrasenia.setText("jPasswordField1");
-        contrasenia.addActionListener(this::contraseniaActionPerformed);
-        panelContrasenia.add(contrasenia);
+                contrasenia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+                contrasenia.setText("jPasswordField1");
+                contrasenia.addActionListener(this::contraseniaActionPerformed);
+                panelContrasenia.add(contrasenia);
 
-        panelCentro.add(panelContrasenia);
+                panelCentro.add(panelContrasenia);
 
-        lbObligatorio.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        lbObligatorio.setText("* Obligatorio");
-        panelCentro.add(lbObligatorio);
+                lbObligatorio.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+                lbObligatorio.setText("* Obligatorio");
+                panelCentro.add(lbObligatorio);
 
-        getContentPane().add(panelCentro, java.awt.BorderLayout.CENTER);
-        panelCentro.getAccessibleContext().setAccessibleDescription("");
+                getContentPane().add(panelCentro, java.awt.BorderLayout.CENTER);
+                panelCentro.getAccessibleContext().setAccessibleDescription("");
 
-        panelSur.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 30, 0));
-        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5);
-        flowLayout1.setAlignOnBaseline(true);
-        panelSur.setLayout(flowLayout1);
+                panelSur.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 30, 0));
+                java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5);
+                flowLayout1.setAlignOnBaseline(true);
+                panelSur.setLayout(flowLayout1);
 
-        java.awt.FlowLayout flowLayout2 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT);
-        flowLayout2.setAlignOnBaseline(true);
-        panelSalir.setLayout(flowLayout2);
+                java.awt.FlowLayout flowLayout2 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT);
+                flowLayout2.setAlignOnBaseline(true);
+                panelSalir.setLayout(flowLayout2);
 
-        btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(this::btnSalirActionPerformed);
-        panelSalir.add(btnSalir);
+                btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                btnSalir.setText("Salir");
+                btnSalir.addActionListener(this::btnSalirActionPerformed);
+                panelSalir.add(btnSalir);
 
-        panelSur.add(panelSalir);
+                panelSur.add(panelSalir);
 
-        panelZonaEntrarCrear.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+                panelZonaEntrarCrear.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        btnCrear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCrear.setText("Crear");
-        btnCrear.addActionListener(this::btnCrearActionPerformed);
-        panelZonaEntrarCrear.add(btnCrear);
+                btnCrear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                btnCrear.setText("Crear");
+                btnCrear.addActionListener(this::btnCrearActionPerformed);
+                panelZonaEntrarCrear.add(btnCrear);
 
-        btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnIngresar.setText("Entrar");
-        btnIngresar.addActionListener(this::btnIngresarActionPerformed);
-        panelZonaEntrarCrear.add(btnIngresar);
+                btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                btnIngresar.setText("Entrar");
+                btnIngresar.addActionListener(this::btnIngresarActionPerformed);
+                panelZonaEntrarCrear.add(btnIngresar);
 
-        panelSur.add(panelZonaEntrarCrear);
+                panelSur.add(panelZonaEntrarCrear);
 
-        getContentPane().add(panelSur, java.awt.BorderLayout.PAGE_END);
+                getContentPane().add(panelSur, java.awt.BorderLayout.PAGE_END);
 
-        panelLabelObligatorio.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        panelLabelObligatorio.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(panelLabelObligatorio, java.awt.BorderLayout.LINE_END);
+                panelLabelObligatorio.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+                panelLabelObligatorio.setLayout(new java.awt.BorderLayout());
+                getContentPane().add(panelLabelObligatorio, java.awt.BorderLayout.LINE_END);
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+                pack();
+        }// </editor-fold>//GEN-END:initComponents
 
         private void contraseniaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_contraseniaActionPerformed
                 // TODO add your handling code here:
@@ -227,9 +229,13 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                                                 "No se puede entrar", JOptionPane.ERROR_MESSAGE);
                         }
                 } catch (IOException e) {
-                        JOptionPane.showMessageDialog(this, Config.MSG_ARCHIVO_CORRUPTO_O_SIN_PERMISOS_TRABAJADORES,
+                        JOptionPane.showMessageDialog(this, Config.MSG_ERROR_PERMISOS,
                                         Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
                         System.err.println(e.getMessage());
+                } catch (ArchivoCorruptoException ex) {
+                        JOptionPane.showMessageDialog(this, Config.MSG_TRABAJADORES_CORRUPTO,
+                                        Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
+                        System.err.println(ex.getMessage());
                 }
 
         }// GEN-LAST:event_btnIngresarActionPerformed
@@ -275,23 +281,23 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                 java.awt.EventQueue.invokeLater(() -> new VentanaInicioSesion().setVisible(true));
         }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrear;
-    private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JPasswordField contrasenia;
-    private javax.swing.JLabel lbObligatorio;
-    private javax.swing.JLabel lbTrabajador;
-    private javax.swing.JLabel lvContrasenia;
-    private javax.swing.JPanel panelCentro;
-    private javax.swing.JPanel panelContrasenia;
-    private javax.swing.JPanel panelLabelObligatorio;
-    private javax.swing.JPanel panelNorte;
-    private javax.swing.JPanel panelSalir;
-    private javax.swing.JPanel panelSur;
-    private javax.swing.JPanel panelTrabajador;
-    private javax.swing.JPanel panelZonaEntrarCrear;
-    private javax.swing.JTextField tfTrabajador;
-    private javax.swing.JLabel tituloPrograma;
-    // End of variables declaration//GEN-END:variables
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnCrear;
+        private javax.swing.JButton btnIngresar;
+        private javax.swing.JButton btnSalir;
+        private javax.swing.JPasswordField contrasenia;
+        private javax.swing.JLabel lbObligatorio;
+        private javax.swing.JLabel lbTrabajador;
+        private javax.swing.JLabel lvContrasenia;
+        private javax.swing.JPanel panelCentro;
+        private javax.swing.JPanel panelContrasenia;
+        private javax.swing.JPanel panelLabelObligatorio;
+        private javax.swing.JPanel panelNorte;
+        private javax.swing.JPanel panelSalir;
+        private javax.swing.JPanel panelSur;
+        private javax.swing.JPanel panelTrabajador;
+        private javax.swing.JPanel panelZonaEntrarCrear;
+        private javax.swing.JTextField tfTrabajador;
+        private javax.swing.JLabel tituloPrograma;
+        // End of variables declaration//GEN-END:variables
 }

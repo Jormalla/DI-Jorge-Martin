@@ -13,6 +13,7 @@ import dam.di.config.Config;
 import dam.di.disenios.ColorDisenio;
 import dam.di.disenios.Componentes;
 import dam.di.entidades.Trabajador;
+import dam.di.exceptions.ArchivoCorruptoException;
 import dam.di.gestores.GestorTrabajadores;
 
 /**
@@ -205,9 +206,13 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
             }
 
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, Config.MSG_ARCHIVO_CORRUPTO_O_SIN_PERMISOS_TRABAJADORES,
+            JOptionPane.showMessageDialog(this, Config.MSG_ERROR_PERMISOS,
                     Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
             System.err.println(e.getMessage());
+        } catch (ArchivoCorruptoException ex) {
+             JOptionPane.showMessageDialog(this, Config.MSG_TRABAJADORES_CORRUPTO,
+                    Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
+            System.err.println(ex.getMessage());
         }
 
     }// GEN-LAST:event_btnCrearActionPerformed
