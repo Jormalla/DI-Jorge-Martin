@@ -21,11 +21,11 @@ public class Cliente {
     private boolean pendiente;
     private Plan plan;
     private Pago pago;
-    private String iban;
+    private String iban = null;
 
     // ========= CONSTRUCTOR ============ //
     public Cliente(String nombre, String apellidos, String dni, String domicilio, int estatura, Path rutaFoto,
-            boolean activo, boolean pendiente, Plan plan, Pago pago, String iban) {
+            boolean activo, boolean pendiente, Plan plan, Pago pago) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
@@ -36,7 +36,6 @@ public class Cliente {
         this.pendiente = pendiente;
         this.plan = plan;
         this.pago = pago;
-        this.iban = iban;
     }
 
     // ============ GETTERS & SETTERS ============= //
