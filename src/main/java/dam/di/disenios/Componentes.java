@@ -2,8 +2,14 @@ package dam.di.disenios;
 
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
 /**
@@ -21,7 +27,7 @@ public class Componentes {
      */
     public static void ponerPlaceholder(JTextField campo, String textoAyuda) {
         campo.setText(textoAyuda);
-        campo.setForeground(Color.decode(ColorDisenio.GRIS));
+        campo.setForeground(Color.decode(ColorDisenio.BLANCO));
 
         // Evento al entrar o salir del campo
         campo.addFocusListener(new FocusAdapter() {
@@ -38,7 +44,7 @@ public class Componentes {
             public void focusLost(FocusEvent e) {
                 // Si el usuario sale y lo dejó vacío, vuelve a poner la ayuda
                 if (campo.getText().isEmpty()) {
-                    campo.setForeground(Color.decode(ColorDisenio.GRIS));
+                    campo.setForeground(Color.decode(ColorDisenio.BLANCO));
                     campo.setText(textoAyuda);
                 }
             }
@@ -54,7 +60,7 @@ public class Componentes {
      */
     public static void ponerPlaceholder(JPasswordField campo, String textoAyuda) {
         campo.setText(textoAyuda);
-        campo.setForeground(Color.decode(ColorDisenio.GRIS));
+        campo.setForeground(Color.decode(ColorDisenio.BLANCO));
 
         // Evento al entrar o salir del campo
         campo.addFocusListener(new FocusAdapter() {
@@ -71,10 +77,45 @@ public class Componentes {
             public void focusLost(FocusEvent e) {
                 // Si el usuario sale y lo dejó vacío, vuelve a poner la ayuda
                 if (new String(campo.getPassword()).isEmpty()) {
-                    campo.setForeground(Color.decode(ColorDisenio.GRIS));
+                    campo.setForeground(Color.decode(ColorDisenio.BLANCO));
                     campo.setText(textoAyuda);
                 }
             }
         });
+    }
+
+    /**
+     * Aplica a todos los componentes los colores del programa
+     * <p>
+     * {@link javax.swing.JOptionPane}.
+     * </p>
+     *
+     * @param contenedor El contenedor raíz donde se aplicara el estilo
+     */
+    public static void aplicarTema(Container contenedor) {
+        // Recorre todos los elementos directos dentro del contenedor actual
+        for (Component componente : contenedor.getComponents()) {
+
+            // Aplica el color de fondo base a los paneles
+            if (componente instanceof JPanel) {
+                componente.setBackground(Color.decode(ColorDisenio.GRIS_BASE));
+
+                // Aplica el color de texto a los labels
+            } else if (componente instanceof JLabel) {
+                componente.setForeground(Color.decode(ColorDisenio.GRIS_LABELS));
+
+                // Aplica fondo y letra a los botones
+            } else if (componente instanceof JButton) {
+                componente.setBackground(Color.decode(ColorDisenio.NEGRO));
+                componente.setForeground(Color.decode(ColorDisenio.BLANCO));
+            }
+
+            // Si el componente actual tiene otros elementos dentro, se llama de nuevo al
+            // método para decorar también sus componentes hijos
+            if (componente instanceof Container) {
+                aplicarTema((Container) componente);
+            }
+        }
+
     }
 }

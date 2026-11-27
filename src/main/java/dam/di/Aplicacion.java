@@ -4,6 +4,13 @@
 
 package dam.di;
 
+import java.awt.Color;
+
+import javax.swing.BorderFactory;
+import javax.swing.UIManager;
+
+import dam.di.disenios.ColorDisenio;
+
 /**
  *
  * @author DAM

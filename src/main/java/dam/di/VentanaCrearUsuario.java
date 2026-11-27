@@ -33,22 +33,16 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         getRootPane().setDefaultButton(btnCrear);
         Componentes.ponerPlaceholder(pwfContrasenia1, "placeholder contraseña");
-        this.getContentPane().setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
+        // ========== DISEÑO =========== //
+        Componentes.aplicarTema(this);
+        // TITULO - DISEÑO
+        titulo.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
         // SALIR - DISEÑO
         btnSalir.setBackground(java.awt.Color.decode(ColorDisenio.ROJO));
         btnSalir.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
         // CANCELAR - DISEÑO
         btnCancelar.setBackground(java.awt.Color.decode(ColorDisenio.GRIS));
         btnCancelar.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
-        // CREAR - DISEÑO
-        btnCrear.setBackground(java.awt.Color.decode(ColorDisenio.NEGRO));
-        btnCrear.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
-        // PANELES - DISEÑO
-        zonaBotones.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
-        zonaCancelarSalir.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
-        zonaCrear.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
-        zonaDatos.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
-        zonaTitulo.setBackground(java.awt.Color.decode(ColorDisenio.VERDE_BASE));
     }
 
     /**
