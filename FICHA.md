@@ -11,7 +11,7 @@ Al menos 7. Como mínimo: 2 de texto · 1 número entero · 1 número decimal ·
 | # | Campo | Tipo de dato | Componente | Ejemplo de valor / opciones |
 |---|-------|--------------|------------|-----------------------------|
 | 1 | Trabajador | String | TextField | Trabajador1 |
-| 2 | Contraseña | String | PasswordField | eswC%RZMNZXoRrn96789&g |
+| 2 | Contraseña | String | Admin | 1234 |
 | 3 | Buscar Cliente | String | TextField | Jorge |
 | 4 | Nombre | String | TextField | Jorge |
 | 5 | Apellidos | String | TextField | Martín |
