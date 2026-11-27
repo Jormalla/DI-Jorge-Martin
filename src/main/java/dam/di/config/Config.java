@@ -16,12 +16,17 @@ public class Config {
     // =========== USUARIO =========== //
     public static final String USUARIO_DEFAULT = "Admin";
     public static final String PLACEHOLDER_USUARIO = "Usuario ...";
+    public static final String LETRAS_DNI = "TRWAGMYFPDXBNJZSQVHLCKE";
 
     // ============ RUTAS ============ //
     public static final Path RUTA_BBDD_TRABAJADORES = Path.of("datos", "trabajadores.dat");
     public static final Path RUTA_BBDD_CLIENTES = Path.of("datos", "clientes.csv");
     public static final Path RUTA_LOGS_REGISTROS = Path.of("logs", "registros.log");
     public static final Path RUTA_LOGS_ERRORES = Path.of("logs", "error.log");
+
+    // ========== CLIENTES =========== //
+    public static final String CABECERA_CLIENTES = "NOMBRE;APELLIDOS;DNI;DOMICILIO;ESTATURA;FOTO;ACTIVO;PENDIENTE;PLAN;PAGO;IBAN";
+    public static final int NUM_COLUMNAS_CLIENTES = CABECERA_CLIENTES.trim().split(";").length;
 
     // ============ MENSAJES ALERTAS =========== //
     public static final String MSG_TITULO_ERROR = "ERROR";

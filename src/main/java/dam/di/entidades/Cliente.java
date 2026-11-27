@@ -14,8 +14,8 @@ public class Cliente {
     private String nombre;
     private String apellidos;
     private String dni;
-    private String domicilio;
-    private int estatura;
+    private String domicilio = null;
+    private int estatura = -1;
     private Path rutaFoto;
     private boolean activo;
     private boolean pendiente;
@@ -24,13 +24,10 @@ public class Cliente {
     private String iban = null;
 
     // ========= CONSTRUCTOR ============ //
-    public Cliente(String nombre, String apellidos, String dni, String domicilio, int estatura, Path rutaFoto,
-            boolean activo, boolean pendiente, Plan plan, Pago pago) {
+    public Cliente(String nombre, String apellidos, String dni, Path rutaFoto, boolean activo, boolean pendiente, Plan plan, Pago pago) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
-        this.domicilio = domicilio;
-        this.estatura = estatura;
         this.rutaFoto = rutaFoto;
         this.activo = activo;
         this.pendiente = pendiente;
