@@ -36,7 +36,7 @@ public class Componentes {
                 // Si tiene el texto de ayuda, lo borra y cambia el color a negro
                 if (campo.getText().equals(textoAyuda)) {
                     campo.setText("");
-                    campo.setForeground(Color.decode(ColorDisenio.NEGRO));
+                    campo.setForeground(Color.decode(ColorDisenio.BLANCO));
                 }
             }
 
@@ -69,7 +69,7 @@ public class Componentes {
                 // Si tiene el texto de ayuda, lo borra y cambia el color a negro
                 if (new String(campo.getPassword()).equals(textoAyuda)) {
                     campo.setText("");
-                    campo.setForeground(Color.decode(ColorDisenio.NEGRO));
+                    campo.setForeground(Color.decode(ColorDisenio.BLANCO));
                 }
             }
 
