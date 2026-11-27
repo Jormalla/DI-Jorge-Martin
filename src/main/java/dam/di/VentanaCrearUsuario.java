@@ -199,11 +199,12 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
                 new VentanaInicioSesion().setVisible(true);
                 dispose();
             }
-
+            // ERROR DE PERSMISOS
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, Config.MSG_ERROR_PERMISOS,
                     Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
             System.err.println(e.getMessage());
+            // ERROR DEL ARCHIVO
         } catch (ArchivoCorruptoException ex) {
              JOptionPane.showMessageDialog(this, Config.MSG_TRABAJADORES_CORRUPTO,
                     Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);

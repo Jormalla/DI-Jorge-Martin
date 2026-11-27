@@ -219,10 +219,12 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                                                                 + ")",
                                                 "No se puede entrar", JOptionPane.ERROR_MESSAGE);
                         }
+                // ERROR DE PERSMISOS
                 } catch (IOException e) {
                         JOptionPane.showMessageDialog(this, Config.MSG_ERROR_PERMISOS,
                                         Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
                         System.err.println(e.getMessage());
+                // ERROR DE ARCHIVO
                 } catch (ArchivoCorruptoException ex) {
                         JOptionPane.showMessageDialog(this, Config.MSG_TRABAJADORES_CORRUPTO,
                                         Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
