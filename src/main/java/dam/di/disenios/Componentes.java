@@ -108,6 +108,10 @@ public class Componentes {
             } else if (componente instanceof JButton) {
                 componente.setBackground(Color.decode(ColorDisenio.NEGRO));
                 componente.setForeground(Color.decode(ColorDisenio.BLANCO));
+                // Aplica el tema al textfield
+            } else if (componente instanceof JTextField) {
+                componente.setBackground(Color.decode(ColorDisenio.GRIS_TEXTFIELD));
+                componente.setForeground(Color.decode(ColorDisenio.BLANCO));
             }
 
             // Si el componente actual tiene otros elementos dentro, se llama de nuevo al
