@@ -40,4 +40,14 @@ public class Config {
     public static final String MSG_EXITO_USUARIO_CREADO = "El trabajador se creó con éxito";
     public static final String MSG_TRABAJADORES_CORRUPTO = "Error al cargar trabajadores.dat. El archivo está corrupto o no sigue los parámetros";
     public static final String MSG_ERROR_PERMISOS = "Hubo un error en los permisos de la aplicación. Revise y modifique los permisos";
+
+    // ============ PAGOS ========== //
+    public static final String EFECTIVO = "EFECTIVO";
+    public static final String TARJETA = "TARJETA";
+    public static final String CUENTA = "CUENTA";
+
+    // ============ PLANES =========== //
+    public static final String DIARIO = "DIARIO";
+    public static final String SEMANAL = "SEMANAL";
+    public static final String MENSUAL = "MENSUAL";
 }
