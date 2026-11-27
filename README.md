@@ -13,7 +13,7 @@
 
 ### Hito 1
 
-- Reto 1: Inicio sesión - Hecho
+- Reto 1: Terminado.
 
 ### Hito 2
 
