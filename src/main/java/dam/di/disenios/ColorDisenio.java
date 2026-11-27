@@ -8,6 +8,7 @@ public class ColorDisenio {
     public static final String GRIS_BASE = "#424242";
     public static final String GRIS_LABELS = "#cfcfcf";
     public static final String GRIS_TEXTFIELD = "#5a5858";
+    public static final String GRIS_TEXTO_PLACEHOLDER = "#9e9d9d";
     public static final String NEGRO = "#000000";
     public static final String GRIS = "#727272";
     public static final String BLANCO = "#ffffff";

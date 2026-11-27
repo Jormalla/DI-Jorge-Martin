@@ -32,9 +32,10 @@ public class VentanaCrearUsuario extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         getRootPane().setDefaultButton(btnCrear);
-        Componentes.ponerPlaceholder(pwfContrasenia1, "placeholder contraseña");
         // ========== DISEÑO =========== //
         Componentes.aplicarTema(this);
+        Componentes.ponerPlaceholder(pwfContrasenia1, Config.PLACEHOLDER_CONTRASENIA);
+        Componentes.ponerPlaceholder(tfTrabajador, Config.PLACEHOLDER_USUARIO);
         // TITULO - DISEÑO
         titulo.setForeground(java.awt.Color.decode(ColorDisenio.BLANCO));
         // SALIR - DISEÑO

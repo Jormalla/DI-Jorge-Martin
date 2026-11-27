@@ -27,7 +27,7 @@ public class Componentes {
      */
     public static void ponerPlaceholder(JTextField campo, String textoAyuda) {
         campo.setText(textoAyuda);
-        campo.setForeground(Color.decode(ColorDisenio.BLANCO));
+        campo.setForeground(Color.decode(ColorDisenio.GRIS_TEXTO_PLACEHOLDER));
 
         // Evento al entrar o salir del campo
         campo.addFocusListener(new FocusAdapter() {
@@ -44,7 +44,7 @@ public class Componentes {
             public void focusLost(FocusEvent e) {
                 // Si el usuario sale y lo dejó vacío, vuelve a poner la ayuda
                 if (campo.getText().isEmpty()) {
-                    campo.setForeground(Color.decode(ColorDisenio.BLANCO));
+                    campo.setForeground(Color.decode(ColorDisenio.GRIS_TEXTO_PLACEHOLDER));
                     campo.setText(textoAyuda);
                 }
             }
@@ -60,7 +60,7 @@ public class Componentes {
      */
     public static void ponerPlaceholder(JPasswordField campo, String textoAyuda) {
         campo.setText(textoAyuda);
-        campo.setForeground(Color.decode(ColorDisenio.BLANCO));
+        campo.setForeground(Color.decode(ColorDisenio.GRIS_TEXTO_PLACEHOLDER));
 
         // Evento al entrar o salir del campo
         campo.addFocusListener(new FocusAdapter() {
@@ -77,7 +77,7 @@ public class Componentes {
             public void focusLost(FocusEvent e) {
                 // Si el usuario sale y lo dejó vacío, vuelve a poner la ayuda
                 if (new String(campo.getPassword()).isEmpty()) {
-                    campo.setForeground(Color.decode(ColorDisenio.BLANCO));
+                    campo.setForeground(Color.decode(ColorDisenio.GRIS_TEXTO_PLACEHOLDER));
                     campo.setText(textoAyuda);
                 }
             }

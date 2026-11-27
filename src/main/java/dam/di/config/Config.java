@@ -15,6 +15,7 @@ public class Config {
 
     // =========== USUARIO =========== //
     public static final String USUARIO_DEFAULT = "Admin";
+    public static final String PLACEHOLDER_USUARIO = "Usuario ...";
 
     // ============ RUTAS ============ //
     public static final Path RUTA_BBDD_TRABAJADORES = Path.of("datos", "trabajadores.dat");
