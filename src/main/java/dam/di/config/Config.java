@@ -51,4 +51,8 @@ public class Config {
     public static final String DIARIO = "DIARIO";
     public static final String SEMANAL = "SEMANAL";
     public static final String MENSUAL = "MENSUAL";
+
+    // =========== TABLA ============ //
+    public static final int COL_EDITAR = 6;
+    public static final int COL_BORRAR = 7;
 }
