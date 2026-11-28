@@ -4,9 +4,14 @@
  */
 package dam.di;
 
+import java.io.IOException;
+
 import javax.swing.JOptionPane;
 
+import dam.di.config.Config;
 import dam.di.disenios.Componentes;
+import dam.di.exceptions.ArchivoCorruptoException;
+import dam.di.gestores.GestorClientes;
 
 /**
  *
@@ -24,6 +29,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         Componentes.aplicarTema(this);
+        // CARGA LOS CLIENTES
+        GestorClientes gestor = new GestorClientes();
+        try {
+            gestor.cargarClientes();
+            // ERROR - LA APLICACIÓN NO TIENE PERMISOS
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, Config.MSG_ERROR_PERMISOS,
+                    Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
+            System.err.println(e.getMessage());
+            // ERROR - EL ARCHIVO ESTÁ CORRUPTO
+        } catch (ArchivoCorruptoException ex) {
+            JOptionPane.showMessageDialog(this, Config.MSG_CLIENTES_CORRUPTO,
+                    Config.MSG_TITULO_ERROR, JOptionPane.ERROR_MESSAGE);
+            System.err.println(ex.getMessage());
+        }
+
     }
 
     /**
@@ -33,7 +54,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         zonaTabla = new javax.swing.JPanel();
@@ -53,26 +75,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         zonaTabla.setLayout(new java.awt.BorderLayout());
 
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "Apellidos", "DNI", "Domicilio", "Estatura", "Activo", "Pendiente", "Ver", ""
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                new Object[][] {
+                        { null, null, null, null, null, null, null, null, null }
+                },
+                new String[] {
+                        "Nombre", "Apellidos", "DNI", "Domicilio", "Estatura", "Activo", "Pendiente", "Ver", ""
+                }) {
+            Class[] types = new Class[] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class,
+                    java.lang.Object.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         jScrollPane1.setViewportView(tablaClientes);
@@ -123,7 +146,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // =============== SALIR ================= //
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSalirActionPerformed
-        int respuesta = JOptionPane.showConfirmDialog(this, "¿Estás seguro de salir? se cerrará la sesión y no se guardarán los cambios aplicados",
+        int respuesta = JOptionPane.showConfirmDialog(this,
+                "¿Estás seguro de salir? se cerrará la sesión y no se guardarán los cambios aplicados",
                 "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (respuesta == JOptionPane.YES_OPTION) {
             System.exit(0);

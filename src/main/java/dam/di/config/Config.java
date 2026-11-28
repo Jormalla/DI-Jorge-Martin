@@ -40,6 +40,7 @@ public class Config {
     public static final String MSG_EXITO_USUARIO_CREADO = "El trabajador se creó con éxito";
     public static final String MSG_TRABAJADORES_CORRUPTO = "Error al cargar trabajadores.dat. El archivo está corrupto o no sigue los parámetros";
     public static final String MSG_ERROR_PERMISOS = "Hubo un error en los permisos de la aplicación. Revise y modifique los permisos";
+    public static final String MSG_CLIENTES_CORRUPTO = "Error al cargar clientes.csv. El archivo está corrupto o no sigue los parámetros";
 
     // ============ PAGOS ========== //
     public static final String EFECTIVO = "EFECTIVO";
