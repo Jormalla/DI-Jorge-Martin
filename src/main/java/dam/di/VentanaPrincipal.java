@@ -102,16 +102,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         // ===== CLIC EN LA CASILLA - PARA EDITAR =====
         if (columna == Config.COL_EDITAR) {
-            // Pone true solo en la fila pulsada y false en las demás, para que solo haya 1
+            boolean yaMarcada = (boolean) datosTabla.getValueAt(fila, Config.COL_EDITAR);
+            // Pone true solo en la fila pulsada y false en las demás, para que solo haya 1.
+            // Si ya estaba marcada, la desmarca
             for (int i = 0; i < datosTabla.getRowCount(); i++) {
-                datosTabla.setValueAt(i == fila, i, Config.COL_EDITAR);
+                datosTabla.setValueAt(i == fila && !yaMarcada, i, Config.COL_EDITAR);
             }
 
             // ===== CLIC EN LA PAPELERA - PARA ELIMINAR =====
         } else if (columna == Config.COL_BORRAR) {
             int respuesta = JOptionPane.showConfirmDialog(this,
                     "¿Deseas eliminar a " + clientes.get(fila).getNombre() + " " + clientes.get(fila).getApellidos()
-                            + "? Este cambio es irreversible",
+                            + "?\nEste cambio es irreversible",
                     Config.MSG_TITULO_CONFIRMAR, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             // Si quiere eliminar - lo elimina
@@ -129,7 +131,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         zonaTabla = new javax.swing.JPanel();
@@ -154,26 +157,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         zonaTabla.setLayout(new java.awt.BorderLayout());
 
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "Apellidos", "DNI", "Plan", "Estado del pago", "Activo", "Ver", ""
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
+                new Object[][] {
+                        { null, null, null, null, null, null, null, null }
+                },
+                new String[] {
+                        "Nombre", "Apellidos", "DNI", "Plan", "Estado del pago", "Activo", "Ver", ""
+                }) {
+            Class[] types = new Class[] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
+                    java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         jScrollPane1.setViewportView(tablaClientes);
@@ -209,12 +212,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         clienteMenu.setText("Cliente");
 
-        nuevoSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        nuevoSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N,
+                java.awt.event.InputEvent.CTRL_DOWN_MASK));
         nuevoSubMenu.setText("Nuevo");
         nuevoSubMenu.addActionListener(this::nuevoSubMenuActionPerformed);
         clienteMenu.add(nuevoSubMenu);
 
-        editarClienteSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        editarClienteSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E,
+                java.awt.event.InputEvent.CTRL_DOWN_MASK));
         editarClienteSubMenu.setText("Editar");
         clienteMenu.add(editarClienteSubMenu);
 
@@ -222,7 +227,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         ingresosMenu.setText("Ingresos");
 
-        planesSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        planesSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P,
+                java.awt.event.InputEvent.CTRL_DOWN_MASK));
         planesSubMenu.setText("Planes");
         planesSubMenu.addActionListener(this::planesSubMenuActionPerformed);
         ingresosMenu.add(planesSubMenu);
@@ -241,17 +247,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nuevoSubMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoSubMenuActionPerformed
+    private void nuevoSubMenuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_nuevoSubMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nuevoSubMenuActionPerformed
+    }// GEN-LAST:event_nuevoSubMenuActionPerformed
 
-    private void planesSubMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_planesSubMenuActionPerformed
+    private void planesSubMenuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_planesSubMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_planesSubMenuActionPerformed
+    }// GEN-LAST:event_planesSubMenuActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }// GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void tfbuscadorActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_tfbuscadorActionPerformed
         // TODO add your handling code here:
@@ -260,8 +266,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // =============== SALIR ================= //
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSalirActionPerformed
         int respuesta = JOptionPane.showConfirmDialog(this,
-                "¿Estás seguro de salir? se cerrará la sesión y no se guardarán los cambios aplicados",
-                "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                "¿Estás seguro de salir?",
+                Config.MSG_TITULO_CONFIRMAR, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (respuesta == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
@@ -269,8 +275,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // ============= CERRAR SESIÓN =============== //
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCerrarSesionActionPerformed
-        int respuesta = JOptionPane.showConfirmDialog(this, "Se cerrará la sesión ¿Estás seguro?",
-                "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int respuesta = JOptionPane.showConfirmDialog(this, "Se cerrará la sesión\n¿Estás seguro?",
+                Config.MSG_TITULO_CONFIRMAR, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (respuesta == JOptionPane.YES_OPTION) {
             new VentanaInicioSesion().setVisible(true);
             dispose();
