@@ -153,7 +153,7 @@ public class GestorClientes {
         // Recorre el resto del csv
         for (int i = 1; i < texto.size(); i++) {
             columnas = texto.get(i).split(";", -1);
-            int filaReal = i + 1;
+            int filaReal = i;
 
             // Comprueba que tenga el número de columnas esperado
             if (columnas.length != Config.NUM_COLUMNAS_CLIENTES) {
