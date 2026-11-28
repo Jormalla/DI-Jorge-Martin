@@ -1,11 +1,13 @@
 package dam.di.gestores;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,6 +106,17 @@ public class GestorClientes {
         return numero.mod(BigInteger.valueOf(97)).intValue() == 1;
     }
 
+    /**
+     * Método para cargar los clientes de un csv
+     * Si no existe crea la ruta del csv. Utilizado como BBDD
+     * 
+     * @return devuelve la lista de clientes (vacía si el archivo no existe o no
+     *         contiene datos)
+     * @throws IOException              En caso de que no tenga permisos de lectura,
+     *                                  escritua o ejecución
+     * @throws ArchivoCorruptoException En caso de que el csv no contenga los
+     *                                  parámetros pedidos
+     */
     public List<Cliente> cargarClientes() throws IOException, ArchivoCorruptoException {
         List<Cliente> clientes = new ArrayList<>();
         Path archivo = Config.RUTA_BBDD_CLIENTES;
@@ -112,12 +125,21 @@ public class GestorClientes {
         if (!Files.exists(archivo) || !Files.isRegularFile(archivo)) {
             Files.createDirectories(archivo.getParent());
             Files.createFile(archivo);
+            // Escribe la cabecera en el csv
+            try (BufferedWriter salida = Files.newBufferedWriter(
+                    archivo, StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.APPEND)) {
+                salida.write(Config.CABECERA_CLIENTES);
+                salida.newLine();
+            }
             return clientes;
         }
         // Abre el CSV y lo lee
         List<String> texto = Files.readAllLines(archivo, StandardCharsets.UTF_8);
 
-        // ERROR - El archivo existe pero está completamente vacío (no tiene ni cabecera)
+        // ERROR - El archivo existe pero está completamente vacío (no tiene ni
+        // cabecera)
         if (texto.isEmpty()) {
             throw new ArchivoCorruptoException("Error al cargar clientes.csv: El archivo está vacío");
         }
