@@ -129,7 +129,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         zonaTabla = new javax.swing.JPanel();
@@ -141,34 +141,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         barraMenu = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        clienteMenu = new javax.swing.JMenu();
+        nuevoSubMenu = new javax.swing.JMenuItem();
+        editarClienteSubMenu = new javax.swing.JMenuItem();
+        ingresosMenu = new javax.swing.JMenu();
+        planesSubMenu = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        ayudaMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         zonaTabla.setLayout(new java.awt.BorderLayout());
 
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null, null, null, null, null }
-                },
-                new String[] {
-                        "Nombre", "Apellidos", "DNI", "Plan", "Estado del pago", "Activo", "Ver", ""
-                }) {
-            Class[] types = new Class[] {
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
-                    java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
+            new Object [][] {
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Apellidos", "DNI", "Plan", "Estado del pago", "Activo", "Ver", ""
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean[] {
-                    false, false, false, false, false, false, false, false
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+                return types [columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(tablaClientes);
@@ -202,16 +207,51 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(zonaBotones, java.awt.BorderLayout.PAGE_END);
 
-        jMenu1.setText("File");
-        barraMenu.add(jMenu1);
+        clienteMenu.setText("Cliente");
 
-        jMenu2.setText("Edit");
-        barraMenu.add(jMenu2);
+        nuevoSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        nuevoSubMenu.setText("Nuevo");
+        nuevoSubMenu.addActionListener(this::nuevoSubMenuActionPerformed);
+        clienteMenu.add(nuevoSubMenu);
+
+        editarClienteSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        editarClienteSubMenu.setText("Editar");
+        clienteMenu.add(editarClienteSubMenu);
+
+        barraMenu.add(clienteMenu);
+
+        ingresosMenu.setText("Ingresos");
+
+        planesSubMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        planesSubMenu.setText("Planes");
+        planesSubMenu.addActionListener(this::planesSubMenuActionPerformed);
+        ingresosMenu.add(planesSubMenu);
+
+        jMenuItem1.setText("Estadísticas");
+        jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
+        ingresosMenu.add(jMenuItem1);
+
+        barraMenu.add(ingresosMenu);
+
+        ayudaMenu.setText("Ayuda");
+        barraMenu.add(ayudaMenu);
 
         setJMenuBar(barraMenu);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nuevoSubMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoSubMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nuevoSubMenuActionPerformed
+
+    private void planesSubMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_planesSubMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_planesSubMenuActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void tfbuscadorActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_tfbuscadorActionPerformed
         // TODO add your handling code here:
@@ -267,12 +307,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu ayudaMenu;
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu clienteMenu;
+    private javax.swing.JMenuItem editarClienteSubMenu;
+    private javax.swing.JMenu ingresosMenu;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem nuevoSubMenu;
+    private javax.swing.JMenuItem planesSubMenu;
     private javax.swing.JTable tablaClientes;
     private javax.swing.JTextField tfbuscador;
     private javax.swing.JPanel zonaBotones;
